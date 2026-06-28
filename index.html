@@ -39,6 +39,82 @@
     position: relative;
   }
 
+  /* ---- WELCOME SCREEN ---- */
+  .welcome-screen {
+    position: fixed;
+    inset: 0;
+    background: var(--page);
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 32px;
+    text-align: center;
+  }
+  .welcome-screen.hidden { display: none; }
+  .welcome-icon { font-size: 56px; margin-bottom: 20px; }
+  .welcome-title {
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .welcome-title span { color: var(--blush-deep); }
+  .welcome-subtitle {
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+  .welcome-form-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-faint);
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%;
+  }
+  .welcome-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: var(--ink);
+    background: white;
+    outline: none;
+    margin-bottom: 12px;
+    transition: border-color 0.15s;
+  }
+  .welcome-input:focus { border-color: var(--blush-deep); }
+  .welcome-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--ink);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 12px;
+  }
+  .welcome-skip {
+    font-size: 13px;
+    color: var(--ink-faint);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    text-decoration: underline;
+  }
+
   /* ---- HEADER ---- */
   .header {
     background: var(--page);
@@ -64,15 +140,9 @@
     color: var(--ink);
     letter-spacing: -0.3px;
   }
+  .app-title span { color: var(--blush-deep); }
 
-  .app-title span {
-    color: var(--blush-deep);
-  }
-
-  .header-actions {
-    display: flex;
-    gap: 8px;
-  }
+  .header-actions { display: flex; gap: 8px; }
 
   .icon-btn {
     width: 36px;
@@ -87,15 +157,12 @@
     font-size: 16px;
     color: var(--ink-soft);
     transition: background 0.15s;
+    -webkit-tap-highlight-color: transparent;
   }
   .icon-btn:hover { background: var(--page-warm); }
 
   /* ---- TAB BAR ---- */
-  .tabs {
-    display: flex;
-    gap: 4px;
-  }
-
+  .tabs { display: flex; gap: 4px; }
   .tab {
     flex: 1;
     padding: 7px 4px;
@@ -108,16 +175,12 @@
     cursor: pointer;
     border-radius: var(--radius-sm);
     transition: all 0.15s;
+    -webkit-tap-highlight-color: transparent;
   }
-  .tab.active {
-    background: var(--ink);
-    color: white;
-  }
+  .tab.active { background: var(--ink); color: white; }
 
   /* ---- MAIN ---- */
-  .main {
-    padding: 16px 20px calc(90px + env(safe-area-inset-bottom));
-  }
+  .main { padding: 16px 20px calc(90px + env(safe-area-inset-bottom)); }
 
   /* ---- ON THIS DAY BANNER ---- */
   .on-this-day {
@@ -127,7 +190,6 @@
     padding: 14px 16px;
     margin-bottom: 20px;
   }
-
   .on-this-day-label {
     font-size: 10px;
     font-weight: 600;
@@ -136,18 +198,12 @@
     color: var(--blush-deep);
     margin-bottom: 6px;
   }
-
   .on-this-day-entry {
     margin-bottom: 8px;
     padding-bottom: 8px;
     border-bottom: 1px solid var(--blush);
   }
-  .on-this-day-entry:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-  }
-
+  .on-this-day-entry:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
   .on-this-day-text {
     font-family: 'Lora', serif;
     font-size: 14px;
@@ -155,12 +211,7 @@
     color: var(--ink);
     font-style: italic;
   }
-
-  .on-this-day-meta {
-    font-size: 11px;
-    color: var(--ink-faint);
-    margin-top: 3px;
-  }
+  .on-this-day-meta { font-size: 11px; color: var(--ink-faint); margin-top: 3px; }
 
   /* ---- ADD ENTRY PANEL ---- */
   .add-panel {
@@ -171,7 +222,6 @@
     margin-bottom: 20px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   }
-
   .add-panel-label {
     font-size: 11px;
     font-weight: 600;
@@ -180,14 +230,7 @@
     color: var(--ink-faint);
     margin-bottom: 10px;
   }
-
-  .kids-row {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    margin-bottom: 12px;
-  }
-
+  .kids-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
   .kid-chip {
     padding: 5px 12px;
     border-radius: 20px;
@@ -198,24 +241,11 @@
     color: var(--ink-soft);
     cursor: pointer;
     transition: all 0.15s;
+    -webkit-tap-highlight-color: transparent;
   }
-  .kid-chip.selected {
-    border-color: var(--blush-deep);
-    background: var(--blush-deep);
-    color: white;
-  }
-  .kid-chip.add-kid {
-    border-style: dashed;
-    color: var(--ink-faint);
-  }
+  .kid-chip.selected { border-color: var(--blush-deep); background: var(--blush-deep); color: white; }
 
-  .category-row {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    margin-bottom: 12px;
-  }
-
+  .category-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
   .cat-chip {
     padding: 4px 10px;
     border-radius: 20px;
@@ -228,8 +258,46 @@
     display: flex;
     align-items: center;
     gap: 4px;
+    -webkit-tap-highlight-color: transparent;
   }
   .cat-chip.selected { border-color: var(--ink); background: var(--ink); color: white; }
+
+  /* ---- DATE PICKER ROW ---- */
+  .date-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .date-row label {
+    font-size: 12px;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+  .date-input {
+    flex: 1;
+    padding: 6px 10px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--ink);
+    background: var(--page);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .date-input:focus { border-color: var(--blush-deep); }
+  .date-today-btn {
+    padding: 6px 10px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: white;
+    font-size: 12px;
+    color: var(--ink-soft);
+    cursor: pointer;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+  }
 
   textarea.entry-input {
     width: 100%;
@@ -249,6 +317,57 @@
   textarea.entry-input:focus { border-color: var(--blush-deep); }
   textarea.entry-input::placeholder { color: var(--ink-faint); font-style: italic; }
 
+  /* ---- PHOTO ---- */
+  .photo-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .photo-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border: 1.5px dashed var(--border);
+    border-radius: var(--radius-sm);
+    background: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--ink-soft);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .photo-preview-wrap {
+    position: relative;
+    display: inline-block;
+  }
+  .photo-preview {
+    width: 52px;
+    height: 52px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    display: none;
+  }
+  .photo-remove {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: white;
+    border: none;
+    font-size: 11px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
   .save-btn {
     width: 100%;
     margin-top: 10px;
@@ -263,6 +382,7 @@
     cursor: pointer;
     transition: background 0.15s;
     letter-spacing: 0.2px;
+    -webkit-tap-highlight-color: transparent;
   }
   .save-btn:hover { background: #2d2d50; }
   .save-btn:disabled { background: var(--border); color: var(--ink-faint); cursor: default; }
@@ -276,11 +396,7 @@
     color: var(--ink-faint);
     margin-bottom: 12px;
   }
-
-  .date-group {
-    margin-bottom: 20px;
-  }
-
+  .date-group { margin-bottom: 20px; }
   .date-group-header {
     font-size: 12px;
     font-weight: 600;
@@ -290,12 +406,7 @@
     align-items: center;
     gap: 8px;
   }
-  .date-group-header::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
+  .date-group-header::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
   .entry-card {
     background: white;
@@ -314,14 +425,7 @@
     justify-content: space-between;
     margin-bottom: 8px;
   }
-
-  .entry-meta {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-wrap: wrap;
-  }
-
+  .entry-meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
   .kid-badge {
     font-size: 11px;
     font-weight: 600;
@@ -330,55 +434,93 @@
     background: var(--blush-deep);
     color: white;
   }
+  .cat-badge { font-size: 11px; color: var(--ink-faint); display: flex; align-items: center; gap: 3px; }
+  .entry-time { font-size: 11px; color: var(--ink-faint); white-space: nowrap; flex-shrink: 0; }
+  .entry-text { font-family: 'Lora', serif; font-size: 15px; line-height: 1.6; color: var(--ink); }
 
-  .cat-badge {
-    font-size: 11px;
-    color: var(--ink-faint);
+  .entry-photo {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: block;
+  }
+
+  .entry-actions {
     display: flex;
-    align-items: center;
-    gap: 3px;
+    gap: 6px;
+    margin-top: 10px;
+    justify-content: flex-end;
   }
-
-  .entry-time {
-    font-size: 11px;
-    color: var(--ink-faint);
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .entry-text {
-    font-family: 'Lora', serif;
-    font-size: 15px;
-    line-height: 1.6;
-    color: var(--ink);
-  }
-
-  .entry-delete {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    border: none;
+  .entry-action-btn {
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
     background: none;
+    font-size: 12px;
     color: var(--ink-faint);
     cursor: pointer;
-    font-size: 16px;
+    -webkit-tap-highlight-color: transparent;
+    transition: all 0.15s;
+  }
+  .entry-action-btn:hover { background: var(--page-warm); color: var(--ink-soft); }
+  .entry-action-btn.danger:hover { background: #fff5f5; color: #c0392b; border-color: #f5c6c6; }
+
+  /* ---- EDIT MODAL ---- */
+  .modal-backdrop {
+    position: fixed; inset: 0;
+    background: rgba(26,26,46,0.5);
+    z-index: 200;
+    display: none;
+    align-items: flex-end;
+  }
+  .modal-backdrop.open { display: flex; }
+  .modal-sheet {
+    background: var(--page);
+    border-radius: 20px 20px 0 0;
+    padding: 20px 20px max(40px, env(safe-area-inset-bottom));
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideUp 0.25s ease-out;
+  }
+  @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+  .modal-handle {
+    width: 36px; height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    margin: 0 auto 16px;
+  }
+  .modal-title {
+    font-family: 'Lora', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .modal-footer {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.15s, color 0.15s;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .modal-btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid var(--border);
+    background: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    cursor: pointer;
     -webkit-tap-highlight-color: transparent;
   }
-  .entry-delete:hover, .entry-delete:active { background: #ffe5e5; color: #c0392b; }
+  .modal-btn.primary { background: var(--ink); color: white; border-color: var(--ink); }
 
   /* ---- EMPTY STATE ---- */
-  .empty-state {
-    text-align: center;
-    padding: 48px 24px;
-    color: var(--ink-faint);
-  }
+  .empty-state { text-align: center; padding: 48px 24px; color: var(--ink-faint); }
   .empty-state-icon { font-size: 40px; margin-bottom: 12px; }
   .empty-state h3 {
     font-family: 'Lora', serif;
@@ -389,11 +531,8 @@
   }
   .empty-state p { font-size: 14px; line-height: 1.6; }
 
-  /* ---- SETTINGS / KIDS VIEW ---- */
-  .settings-section {
-    margin-bottom: 24px;
-  }
-
+  /* ---- SETTINGS ---- */
+  .settings-section { margin-bottom: 24px; }
   .settings-title {
     font-size: 11px;
     font-weight: 600;
@@ -402,13 +541,7 @@
     color: var(--ink-faint);
     margin-bottom: 12px;
   }
-
-  .kids-manager {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
+  .kids-manager { display: flex; flex-direction: column; gap: 8px; }
   .kid-row {
     display: flex;
     align-items: center;
@@ -418,18 +551,8 @@
     border-radius: var(--radius-sm);
     padding: 12px 16px;
   }
-
-  .kid-row-name {
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--ink);
-  }
-
-  .kid-count {
-    font-size: 12px;
-    color: var(--ink-faint);
-  }
-
+  .kid-row-name { font-size: 15px; font-weight: 500; color: var(--ink); }
+  .kid-count { font-size: 12px; color: var(--ink-faint); }
   .btn-remove {
     border: none;
     background: none;
@@ -440,15 +563,10 @@
     padding: 2px 4px;
     border-radius: 4px;
     transition: color 0.15s;
+    -webkit-tap-highlight-color: transparent;
   }
   .btn-remove:hover { color: #c0392b; }
-
-  .add-kid-form {
-    display: flex;
-    gap: 8px;
-    margin-top: 8px;
-  }
-
+  .add-kid-form { display: flex; gap: 8px; margin-top: 8px; }
   .add-kid-form input {
     flex: 1;
     padding: 10px 14px;
@@ -461,7 +579,6 @@
     transition: border-color 0.15s;
   }
   .add-kid-form input:focus { border-color: var(--blush-deep); }
-
   .btn-add {
     padding: 10px 16px;
     background: var(--ink);
@@ -472,16 +589,9 @@
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
-    transition: background 0.15s;
+    -webkit-tap-highlight-color: transparent;
   }
-  .btn-add:hover { background: #2d2d50; }
-
-  .data-btns {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
+  .data-btns { display: flex; flex-direction: column; gap: 8px; }
   .data-btn {
     padding: 13px 16px;
     border-radius: var(--radius-sm);
@@ -496,6 +606,7 @@
     align-items: center;
     gap: 10px;
     transition: background 0.15s;
+    -webkit-tap-highlight-color: transparent;
   }
   .data-btn:hover { background: var(--page-warm); }
   .data-btn.danger { color: #c0392b; border-color: #f5c6c6; }
@@ -512,7 +623,6 @@
     scrollbar-width: none;
   }
   .filter-bar::-webkit-scrollbar { display: none; }
-
   .filter-chip {
     padding: 5px 12px;
     border-radius: 20px;
@@ -525,12 +635,9 @@
     white-space: nowrap;
     transition: all 0.15s;
     flex-shrink: 0;
+    -webkit-tap-highlight-color: transparent;
   }
-  .filter-chip.active {
-    background: var(--ink);
-    border-color: var(--ink);
-    color: white;
-  }
+  .filter-chip.active { background: var(--ink); border-color: var(--ink); color: white; }
 
   /* ---- TOAST ---- */
   .toast {
@@ -550,10 +657,7 @@
     z-index: 1000;
     white-space: nowrap;
   }
-  .toast.show {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
   /* ---- BOTTOM NAV ---- */
   .bottom-nav {
@@ -569,7 +673,6 @@
     padding: 8px 0 max(20px, env(safe-area-inset-bottom));
     z-index: 100;
   }
-
   .nav-btn {
     flex: 1;
     display: flex;
@@ -585,74 +688,11 @@
     font-size: 11px;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
+    -webkit-tap-highlight-color: transparent;
   }
   .nav-btn.active { color: var(--blush-deep); }
   .nav-btn svg { width: 22px; height: 22px; stroke-width: 1.8; }
 
-  /* ---- ADD MODAL (floating) ---- */
-  .fab {
-    position: fixed;
-    bottom: 80px;
-    right: 24px;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: var(--blush-deep);
-    color: white;
-    border: none;
-    font-size: 28px;
-    cursor: pointer;
-    box-shadow: 0 4px 16px rgba(201,135,106,0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 99;
-    transition: transform 0.15s, box-shadow 0.15s;
-    display: none;
-  }
-  .fab:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(201,135,106,0.5); }
-
-  /* modal */
-  .modal-backdrop {
-    position: fixed; inset: 0;
-    background: rgba(26,26,46,0.5);
-    z-index: 200;
-    display: none;
-    align-items: flex-end;
-  }
-  .modal-backdrop.open { display: flex; }
-
-  .modal-sheet {
-    background: var(--page);
-    border-radius: 20px 20px 0 0;
-    padding: 20px 20px 40px;
-    width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-    animation: slideUp 0.25s ease-out;
-  }
-
-  @keyframes slideUp {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0); }
-  }
-
-  .modal-handle {
-    width: 36px; height: 4px;
-    background: var(--border);
-    border-radius: 2px;
-    margin: 0 auto 16px;
-  }
-
-  .modal-title {
-    font-family: 'Lora', serif;
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--ink);
-    margin-bottom: 16px;
-  }
-
-  /* ---- RESPONSIVE ---- */
   @media (max-width: 380px) {
     .app-title { font-size: 19px; }
     .entry-text { font-size: 14px; }
@@ -660,6 +700,17 @@
 </style>
 </head>
 <body>
+
+<!-- WELCOME SCREEN -->
+<div class="welcome-screen" id="welcome-screen">
+  <div class="welcome-icon">✨</div>
+  <h1 class="welcome-title">little <span>moments</span></h1>
+  <p class="welcome-subtitle">A private place to save the little things your kids say, do, and become — before they slip away.</p>
+  <div class="welcome-form-label">Who's the first little one?</div>
+  <input class="welcome-input" id="welcome-kid-name" type="text" placeholder="e.g. Archie" maxlength="20" onkeydown="if(event.key==='Enter') welcomeSubmit()">
+  <button class="welcome-btn" onclick="welcomeSubmit()">Get started</button>
+  <button class="welcome-skip" onclick="welcomeSkip()">Skip for now</button>
+</div>
 
 <!-- HEADER -->
 <div class="header">
@@ -683,17 +734,12 @@
 
   <!-- JOURNAL TAB -->
   <div id="tab-journal">
-
-    <!-- On This Day -->
     <div id="on-this-day-section" style="display:none"></div>
 
-    <!-- Add Entry Panel -->
     <div class="add-panel">
       <div class="add-panel-label">New moment</div>
 
-      <div class="kids-row" id="kid-selector">
-        <!-- populated by JS -->
-      </div>
+      <div class="kids-row" id="kid-selector"></div>
 
       <div class="category-row">
         <button class="cat-chip selected" data-cat="said" onclick="selectCat(this)">💬 Said</button>
@@ -702,28 +748,42 @@
         <button class="cat-chip" data-cat="cute" onclick="selectCat(this)">🥰 Cute</button>
       </div>
 
+      <div class="date-row">
+        <label for="entry-date">Date</label>
+        <input class="date-input" type="date" id="entry-date">
+        <button class="date-today-btn" onclick="resetDateToToday()">Today</button>
+      </div>
+
       <textarea class="entry-input" id="entry-text" placeholder="Write it down before you forget…" rows="3"></textarea>
 
-      <button class="save-btn" id="save-btn" onclick="saveEntry()">Save this moment</button>
+      <div class="photo-row">
+        <button class="photo-btn" onclick="document.getElementById('photo-input').click()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          Add photo
+        </button>
+        <input type="file" id="photo-input" accept="image/*" style="display:none" onchange="handlePhotoSelect(event)">
+        <div class="photo-preview-wrap" id="photo-preview-wrap">
+          <img class="photo-preview" id="photo-preview" src="" alt="Preview">
+          <button class="photo-remove" id="photo-remove" onclick="removePhoto()">×</button>
+        </div>
+      </div>
+
+      <button class="save-btn" onclick="saveEntry()">Save this moment</button>
     </div>
 
-    <!-- Today's entries -->
     <div id="today-entries"></div>
-
   </div>
 
   <!-- MEMORIES TAB -->
   <div id="tab-memories" style="display:none">
     <div class="filter-bar" id="filter-bar">
-      <button class="filter-chip active" data-filter="all" onclick="setFilter(this, 'all')">All</button>
-      <!-- kid filters added by JS -->
+      <button class="filter-chip active" onclick="setFilter(this,'all')">All</button>
     </div>
     <div id="timeline"></div>
   </div>
 
   <!-- SETTINGS TAB -->
   <div id="tab-settings" style="display:none">
-
     <div class="settings-section">
       <div class="settings-title">Kids</div>
       <div class="kids-manager" id="kids-manager"></div>
@@ -736,16 +796,10 @@
     <div class="settings-section">
       <div class="settings-title">Your data</div>
       <div class="data-btns">
-        <button class="data-btn" onclick="exportData()">
-          <span>⬇️</span> Export backup (JSON)
-        </button>
-        <button class="data-btn" onclick="document.getElementById('import-file').click()">
-          <span>⬆️</span> Restore from backup
-        </button>
+        <button class="data-btn" onclick="exportData()"><span>⬇️</span> Export backup (JSON)</button>
+        <button class="data-btn" onclick="document.getElementById('import-file').click()"><span>⬆️</span> Restore from backup</button>
         <input type="file" id="import-file" accept=".json" style="display:none" onchange="importData(event)">
-        <button class="data-btn danger" onclick="confirmClearAll()">
-          <span>🗑️</span> Clear all data
-        </button>
+        <button class="data-btn danger" onclick="confirmClearAll()"><span>🗑️</span> Clear all data</button>
       </div>
     </div>
 
@@ -756,11 +810,10 @@
           <strong style="color:var(--ink)">little moments</strong> stores everything on this device only. Nothing is uploaded anywhere. Export regularly to keep a backup safe.
         </p>
         <p style="font-size:12px;color:var(--ink-faint);margin-top:8px;">
-          Tip: On iPhone, tap Share → "Add to Home Screen" to install as an app.
+          Tip: On iPhone, tap Share → "Add to Home Screen" to use as an app.
         </p>
       </div>
     </div>
-
   </div>
 
 </div>
@@ -781,49 +834,93 @@
   </button>
 </div>
 
+<!-- EDIT MODAL -->
+<div class="modal-backdrop" id="edit-modal">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-title">Edit moment</div>
+    <div class="category-row" id="edit-cat-row">
+      <button class="cat-chip selected" data-cat="said" onclick="editSelectCat(this)">💬 Said</button>
+      <button class="cat-chip" data-cat="did" onclick="editSelectCat(this)">⭐ Did</button>
+      <button class="cat-chip" data-cat="milestone" onclick="editSelectCat(this)">🎉 Milestone</button>
+      <button class="cat-chip" data-cat="cute" onclick="editSelectCat(this)">🥰 Cute</button>
+    </div>
+    <div class="date-row" style="margin-top:10px">
+      <label>Date</label>
+      <input class="date-input" type="date" id="edit-date">
+      </div>
+    <textarea class="entry-input" id="edit-text" rows="4" style="margin-top:10px"></textarea>
+    <div class="modal-footer">
+      <button class="modal-btn" onclick="closeEditModal()">Cancel</button>
+      <button class="modal-btn primary" onclick="saveEdit()">Save changes</button>
+    </div>
+  </div>
+</div>
+
 <!-- TOAST -->
 <div class="toast" id="toast"></div>
 
 <script>
-// ============================================================
-// DATA LAYER
-// ============================================================
-
 const STORAGE_KEY = 'little_moments_data';
+const WELCOME_KEY = 'little_moments_welcomed';
 
 function getData() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return { kids: [], entries: [] };
     return JSON.parse(raw);
-  } catch(e) {
-    return { kids: [], entries: [] };
-  }
+  } catch(e) { return { kids: [], entries: [] }; }
 }
 
 function saveData(data) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 }
 
-// ============================================================
-// STATE
-// ============================================================
-
+// ---- STATE ----
 let currentTab = 'journal';
 let selectedKid = null;
 let selectedCat = 'said';
 let filterKid = 'all';
+let pendingPhotoData = null;
+let editingEntryId = null;
+let editCat = 'said';
 
-// ============================================================
-// INIT
-// ============================================================
+const CAT_ICONS = { said: '💬', did: '⭐', milestone: '🎉', cute: '🥰' };
+const CAT_LABELS = { said: 'Said', did: 'Did', milestone: 'Milestone', cute: 'Cute' };
 
-function init() {
+// ---- WELCOME ----
+function initWelcome() {
+  const welcomed = localStorage.getItem(WELCOME_KEY);
   const data = getData();
-  // Seed a kid name prompt if none exist
-  if (data.kids.length === 0) {
-    // Show welcome - just render empty state with prompt
+  if (welcomed || data.kids.length > 0) {
+    document.getElementById('welcome-screen').classList.add('hidden');
   }
+}
+
+function welcomeSubmit() {
+  const name = document.getElementById('welcome-kid-name').value.trim();
+  if (name) {
+    const data = getData();
+    if (!data.kids.includes(name)) {
+      data.kids.push(name);
+      saveData(data);
+      selectedKid = name;
+    }
+  }
+  localStorage.setItem(WELCOME_KEY, '1');
+  document.getElementById('welcome-screen').classList.add('hidden');
+  init();
+}
+
+function welcomeSkip() {
+  localStorage.setItem(WELCOME_KEY, '1');
+  document.getElementById('welcome-screen').classList.add('hidden');
+  init();
+}
+
+// ---- INIT ----
+function init() {
+  resetDateToToday();
   renderKidSelector();
   renderOnThisDay();
   renderTodayEntries();
@@ -832,10 +929,7 @@ function init() {
   renderFilterBar();
 }
 
-// ============================================================
-// TABS
-// ============================================================
-
+// ---- TABS ----
 function switchTab(tab) {
   currentTab = tab;
   ['journal','memories','settings'].forEach(t => {
@@ -848,23 +942,17 @@ function switchTab(tab) {
   if (tab === 'settings') { renderKidsManager(); renderFilterBar(); }
 }
 
-// ============================================================
-// KIDS
-// ============================================================
-
+// ---- KIDS ----
 function renderKidSelector() {
   const data = getData();
   const sel = document.getElementById('kid-selector');
-  let html = '';
-  data.kids.forEach(k => {
-    const active = selectedKid === k ? 'selected' : '';
-    html += `<button class="kid-chip ${active}" onclick="selectKid(this,'${esc(k)}')">${esc(k)}</button>`;
-  });
   if (data.kids.length === 0) {
-    html = `<span style="font-size:13px;color:var(--ink-faint);font-style:italic">Add a child's name in Settings first</span>`;
+    sel.innerHTML = `<span style="font-size:13px;color:var(--ink-faint);font-style:italic">Add a child's name in Settings first</span>`;
+    return;
   }
-  sel.innerHTML = html;
-  // auto-select if only one kid
+  sel.innerHTML = data.kids.map(k =>
+    `<button class="kid-chip ${selectedKid === k ? 'selected' : ''}" onclick="selectKid(this,'${esc(k)}')">${esc(k)}</button>`
+  ).join('');
   if (data.kids.length === 1 && !selectedKid) {
     selectedKid = data.kids[0];
     renderKidSelector();
@@ -921,26 +1009,49 @@ function renderKidsManager() {
   }).join('');
 }
 
-// ============================================================
-// CATEGORIES
-// ============================================================
-
+// ---- CATEGORIES ----
 function selectCat(btn) {
-  document.querySelectorAll('.cat-chip').forEach(b => b.classList.remove('selected'));
+  document.querySelectorAll('#tab-journal .cat-chip').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
   selectedCat = btn.dataset.cat;
 }
 
-const CAT_ICONS = { said: '💬', did: '⭐', milestone: '🎉', cute: '🥰' };
-const CAT_LABELS = { said: 'Said', did: 'Did', milestone: 'Milestone', cute: 'Cute' };
+// ---- DATE ----
+function resetDateToToday() {
+  document.getElementById('entry-date').value = todayStr();
+}
 
-// ============================================================
-// SAVE ENTRY
-// ============================================================
+// ---- PHOTO ----
+function handlePhotoSelect(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    pendingPhotoData = e.target.result;
+    const preview = document.getElementById('photo-preview');
+    const removeBtn = document.getElementById('photo-remove');
+    preview.src = pendingPhotoData;
+    preview.style.display = 'block';
+    removeBtn.style.display = 'flex';
+  };
+  reader.readAsDataURL(file);
+  event.target.value = '';
+}
 
+function removePhoto() {
+  pendingPhotoData = null;
+  document.getElementById('photo-preview').style.display = 'none';
+  document.getElementById('photo-remove').style.display = 'none';
+  document.getElementById('photo-preview').src = '';
+}
+
+// ---- SAVE ENTRY ----
 function saveEntry() {
   const text = document.getElementById('entry-text').value.trim();
   if (!text) { showToast('Write something first!'); return; }
+
+  const dateVal = document.getElementById('entry-date').value || todayStr();
+  const isBackdated = dateVal !== todayStr();
 
   const data = getData();
   const entry = {
@@ -948,31 +1059,29 @@ function saveEntry() {
     kid: selectedKid || null,
     cat: selectedCat,
     text: text,
-    date: todayStr(),
-    time: nowTimeStr(),
-    ts: Date.now()
+    date: dateVal,
+    time: isBackdated ? '' : nowTimeStr(),
+    ts: Date.now(),
+    photo: pendingPhotoData || null
   };
 
   data.entries.unshift(entry);
   saveData(data);
 
   document.getElementById('entry-text').value = '';
+  removePhoto();
+  resetDateToToday();
   renderTodayEntries();
   renderOnThisDay();
-
-  showToast('Saved ✓');
+  showToast(isBackdated ? 'Saved ✓' : 'Saved ✓');
 }
 
-// ============================================================
-// TODAY ENTRIES
-// ============================================================
-
+// ---- TODAY ENTRIES ----
 function renderTodayEntries() {
   const data = getData();
   const today = todayStr();
   const todays = data.entries.filter(e => e.date === today);
   const el = document.getElementById('today-entries');
-
   if (todays.length === 0) {
     el.innerHTML = `<div class="empty-state">
       <div class="empty-state-icon">✨</div>
@@ -981,27 +1090,17 @@ function renderTodayEntries() {
     </div>`;
     return;
   }
-
-  el.innerHTML = `<div class="timeline-label">Today</div>` +
-    todays.map(e => entryCardHTML(e)).join('');
+  el.innerHTML = `<div class="timeline-label">Today</div>` + todays.map(e => entryCardHTML(e)).join('');
 }
 
-// ============================================================
-// ON THIS DAY
-// ============================================================
-
+// ---- ON THIS DAY ----
 function renderOnThisDay() {
   const data = getData();
-  const today = todayStr(); // YYYY-MM-DD
-  const mmdd = today.slice(5); // MM-DD
-
-  const past = data.entries.filter(e =>
-    e.date !== today && e.date.slice(5) === mmdd
-  );
-
+  const today = todayStr();
+  const mmdd = today.slice(5);
+  const past = data.entries.filter(e => e.date !== today && e.date.slice(5) === mmdd);
   const section = document.getElementById('on-this-day-section');
   if (past.length === 0) { section.style.display = 'none'; return; }
-
   section.style.display = 'block';
   section.innerHTML = `<div class="on-this-day">
     <div class="on-this-day-label">✨ On this day</div>
@@ -1014,10 +1113,7 @@ function renderOnThisDay() {
   </div>`;
 }
 
-// ============================================================
-// TIMELINE / MEMORIES
-// ============================================================
-
+// ---- TIMELINE ----
 function setFilter(btn, kid) {
   filterKid = kid;
   document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
@@ -1028,7 +1124,7 @@ function setFilter(btn, kid) {
 function renderFilterBar() {
   const data = getData();
   const bar = document.getElementById('filter-bar');
-  let html = `<button class="filter-chip ${filterKid === 'all' ? 'active' : ''}" data-filter="all" onclick="setFilter(this,'all')">All</button>`;
+  let html = `<button class="filter-chip ${filterKid === 'all' ? 'active' : ''}" onclick="setFilter(this,'all')">All</button>`;
   data.kids.forEach(k => {
     html += `<button class="filter-chip ${filterKid === k ? 'active' : ''}" onclick="setFilter(this,'${esc(k)}')">${esc(k)}</button>`;
   });
@@ -1039,9 +1135,7 @@ function renderTimeline() {
   const data = getData();
   let entries = [...data.entries];
   if (filterKid !== 'all') entries = entries.filter(e => e.kid === filterKid);
-
   const el = document.getElementById('timeline');
-
   if (entries.length === 0) {
     el.innerHTML = `<div class="empty-state">
       <div class="empty-state-icon">📖</div>
@@ -1050,16 +1144,12 @@ function renderTimeline() {
     </div>`;
     return;
   }
-
-  // Group by date
   const groups = {};
   entries.forEach(e => {
     if (!groups[e.date]) groups[e.date] = [];
     groups[e.date].push(e);
   });
-
   const sortedDates = Object.keys(groups).sort((a,b) => b.localeCompare(a));
-
   el.innerHTML = sortedDates.map(date => `
     <div class="date-group">
       <div class="date-group-header">${formatDateDisplay(date)}</div>
@@ -1068,10 +1158,7 @@ function renderTimeline() {
   `).join('');
 }
 
-// ============================================================
-// ENTRY CARD
-// ============================================================
-
+// ---- ENTRY CARD ----
 function entryCardHTML(e) {
   return `<div class="entry-card" id="entry-${e.id}">
     <div class="entry-card-top">
@@ -1082,7 +1169,11 @@ function entryCardHTML(e) {
       <span class="entry-time">${e.time || ''}</span>
     </div>
     <div class="entry-text">${esc(e.text)}</div>
-    <button class="entry-delete" onclick="deleteEntry('${e.id}')" title="Delete">×</button>
+    ${e.photo ? `<img class="entry-photo" src="${e.photo}" alt="Memory photo">` : ''}
+    <div class="entry-actions">
+      <button class="entry-action-btn" onclick="openEditModal('${e.id}')">Edit</button>
+      <button class="entry-action-btn danger" onclick="deleteEntry('${e.id}')">Delete</button>
+    </div>
   </div>`;
 }
 
@@ -1098,10 +1189,56 @@ function deleteEntry(id) {
   showToast('Deleted');
 }
 
-// ============================================================
-// EXPORT / IMPORT
-// ============================================================
+// ---- EDIT ----
+function openEditModal(id) {
+  const data = getData();
+  const entry = data.entries.find(e => e.id === id);
+  if (!entry) return;
+  editingEntryId = id;
+  editCat = entry.cat || 'said';
+  document.getElementById('edit-text').value = entry.text;
+  document.getElementById('edit-date').value = entry.date;
+  document.querySelectorAll('#edit-cat-row .cat-chip').forEach(b => {
+    b.classList.toggle('selected', b.dataset.cat === editCat);
+  });
+  document.getElementById('edit-modal').classList.add('open');
+}
 
+function closeEditModal() {
+  document.getElementById('edit-modal').classList.remove('open');
+  editingEntryId = null;
+}
+
+function editSelectCat(btn) {
+  document.querySelectorAll('#edit-cat-row .cat-chip').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  editCat = btn.dataset.cat;
+}
+
+function saveEdit() {
+  const text = document.getElementById('edit-text').value.trim();
+  if (!text) { showToast('Write something first!'); return; }
+  const dateVal = document.getElementById('edit-date').value || todayStr();
+  const data = getData();
+  const idx = data.entries.findIndex(e => e.id === editingEntryId);
+  if (idx === -1) return;
+  data.entries[idx].text = text;
+  data.entries[idx].date = dateVal;
+  data.entries[idx].cat = editCat;
+  saveData(data);
+  closeEditModal();
+  renderTodayEntries();
+  renderTimeline();
+  renderOnThisDay();
+  showToast('Updated ✓');
+}
+
+// Close modal on backdrop tap
+document.getElementById('edit-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeEditModal();
+});
+
+// ---- EXPORT / IMPORT ----
 function exportData() {
   const data = getData();
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
@@ -1126,9 +1263,7 @@ function importData(event) {
       saveData(imported);
       init();
       showToast(`Imported ${imported.entries.length} moments ✓`);
-    } catch(err) {
-      showToast('Import failed — invalid file');
-    }
+    } catch(err) { showToast('Import failed — invalid file'); }
   };
   reader.readAsText(file);
   event.target.value = '';
@@ -1143,38 +1278,25 @@ function confirmClearAll() {
   showToast('All data cleared');
 }
 
-// ============================================================
-// HELPERS
-// ============================================================
-
-function todayStr() {
-  return new Date().toISOString().slice(0, 10);
-}
-
-function nowTimeStr() {
-  return new Date().toLocaleTimeString('en-AU', { hour: '2-digit', minute: '2-digit' });
-}
+// ---- HELPERS ----
+function todayStr() { return new Date().toISOString().slice(0, 10); }
+function nowTimeStr() { return new Date().toLocaleTimeString('en-AU', { hour: '2-digit', minute: '2-digit' }); }
 
 function formatDateDisplay(dateStr) {
   const d = new Date(dateStr + 'T12:00:00');
   const today = new Date();
   const yesterday = new Date(today);
   yesterday.setDate(today.getDate() - 1);
-
   if (dateStr === todayStr()) return 'Today';
   if (dateStr === yesterday.toISOString().slice(0,10)) return 'Yesterday';
-
   return d.toLocaleDateString('en-AU', { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' });
 }
 
 function esc(str) {
   if (!str) return '';
   return String(str)
-    .replace(/&/g,'&amp;')
-    .replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;')
-    .replace(/"/g,'&quot;')
-    .replace(/'/g,'&#39;');
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 }
 
 function showToast(msg) {
@@ -1184,10 +1306,8 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 2200);
 }
 
-// ============================================================
-// START
-// ============================================================
-
+// ---- START ----
+initWelcome();
 init();
 </script>
 </body>
